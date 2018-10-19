@@ -11,6 +11,14 @@ def create_user():
 	print "Got POST info"
 	name = request.form["name"]
 	email = request.form["email"]
-	return redirect("/")
+	print("name = " + name)
+	print("email = " + email)
+	print("Here's the whole dang array! ", request.form)
+	return redirect("/donePosting")
+
+@app.route('/donePosting')
+def donePosting():
+	return render_template("ThankYou.html")
+
 
 app.run(debug=True)
